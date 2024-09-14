@@ -85,6 +85,10 @@ theme = "terminal"
           name = "About"
           url = "/about"
         [[languages.en.menu.main]]
+          identifier = "weathger"
+          name = "Weather"
+          url = "/weather"
+        [[languages.en.menu.main]]
           identifier = "X"
           name = "X"
           url = "https://x.com/andrepcg"
@@ -96,3 +100,9 @@ theme = "terminal"
   # replacements = "github.com/panr/hugo-theme-terminal/v4 -> themes/terminal"
 [[module.imports]]
   # path = 'github.com/panr/hugo-theme-terminal/v4'
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
