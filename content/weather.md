@@ -13,7 +13,7 @@ draft = false
 [PWS Weather](https://www.pwsweather.com/station/pws/ICOIMB53)
 [Windguru](https://www.windguru.cz/station/5835)
 
-{{< iframe src="https://widget.awekas.at/widget4.php?id=38221&lng=en&uni=c&wuni=km&rad=0&bg=#178bcf1a&co=ffffffff&bo=ffffffff" width="300" height="250" >}}
+{{< image src="/weather/current" alt="ICOIMB53 current weather" position="center" style="width: 350px;" >}}
 
 ## Webcam
 

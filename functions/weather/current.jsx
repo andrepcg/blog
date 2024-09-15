@@ -173,7 +173,7 @@ export const onRequest = async (context) => {
     renderWidget(data),
     {
       width: 700,
-      height: 500,
+      height: 430,
       emoji: "openmoji"
     }
   );
