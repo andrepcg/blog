@@ -129,7 +129,10 @@ export const onRequest = async ({ env }) => {
     {
       width: 700,
       height: 430,
-      emoji: "openmoji"
+      emoji: "openmoji",
+      headers: {
+        "Cache-Control": `public, max-age=${60 * IMAGE_CACHE_MINUTES}`,
+      }
     }
   );
   console.log("Generating new image")
