@@ -93,3 +93,4 @@ resources
 .hugo_build.lock
 
 .dev.vars
+.wrangler/

@@ -1,44 +1,6 @@
 import React from "react";
 import { ImageResponse } from "@cloudflare/pages-plugin-vercel-og/api";
 
-//https://api.weather.com/v2/pws/observations/current?stationId=ICOIMB53&format=json&units=m&apiKey=API_KEY
-
-//WUNDERGROUND_API_KEY
-
-const MOCK_DATA = {
-  observations: [
-    {
-      stationID: "ICOIMB53",
-      obsTimeUtc: "2024-09-14T22:46:58Z",
-      obsTimeLocal: "2024-09-14 23:46:58",
-      neighborhood: "Coimbra",
-      softwareType: "Cumulus v4.1.3",
-      country: "PT",
-      solarRadiation: 0.0,
-      lon: -8.440329,
-      realtimeFrequency: null,
-      epoch: 1726354018,
-      lat: 40.174385,
-      uv: 0.0,
-      winddir: 45,
-      humidity: 54,
-      qcStatus: 1,
-      metric: {
-        temp: 18,
-        heatIndex: 18,
-        dewpt: 9,
-        windChill: 18,
-        windSpeed: 4,
-        windGust: 6,
-        pressure: 1000.51,
-        precipRate: 0.0,
-        precipTotal: 0.0,
-        elev: 52,
-      },
-    },
-  ],
-};
-
 async function getWeather(api_key) {
   const url = `https://api.weather.com/v2/pws/observations/current?stationId=ICOIMB53&format=json&units=m&apiKey=${api_key}`;
   const response = await fetch(url);
@@ -59,24 +21,34 @@ function windDirection(deg) {
 
 function formatDate(epoch) {
   const date = new Date(epoch * 1000);
-  return date.toLocaleString();
+  return date.toLocaleString("pt-PT", { timeZone: 'Europe/Lisbon', timeZoneName: 'short' });
 }
 
-function renderWidget(data) {
-  const o = data.observations[0];
+const ICON_STYLE = { fontSize: 40, textShadow: "1px 1px 0px #333" };
+const DATA_POINT_STYLE = {
+  fontSize: 30,
+  display: "flex",
+  flexDirection: "column",
+  padding: 2,
+  alignItems: "center",
+  paddingLeft: 30,
+  paddingRight: 30,
+}
 
-  const a = {
-    fontSize: 30,
-    display: "flex",
-    flexDirection: "column",
-    padding: 2,
-    alignItems: "center",
-    // marginBottom: "10px",
-    paddingLeft: 30,
-    paddingRight: 30,
-  };
-  const zero_margin = {};
-  const icon = { fontSize: 40, textShadow: "1px 1px 0px #333" };
+function DataPoint({ icon, units, value, extraValue }) {
+  return (
+    <div style={DATA_POINT_STYLE}>
+      <span style={ICON_STYLE}>{icon}</span>
+      <span>
+        {`${value} ${units}`}
+      </span>
+      {extraValue && <span>{extraValue}</span>}
+    </div>
+  )
+}
+
+function Widget({ observation }) {
+
   const main = {
     display: "flex",
     flexDirection: "column",
@@ -91,7 +63,6 @@ function renderWidget(data) {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    // justifyContent: "space-between",
   }
 
   return (
@@ -110,71 +81,54 @@ function renderWidget(data) {
         <strong>Carvalhais de Baixo, Coimbra (40.174, -8.440)</strong>
       </p>
       <p style={{ fontSize: 20, marginBottom: 15 }}>
-        <span style={{ marginRight: 8 }}>Last Measurement:</span> {formatDate(o.epoch)}
+        <span style={{ marginRight: 8 }}>Last Measurement:</span> {formatDate(observation.epoch)}
       </p>
 
       <div style={row}>
-        <div style={a}>
-          <span style={icon}>🌡️</span>
-          <span id="temperature" style={zero_margin}>
-            {o.metric.temp}°C
-          </span>
-        </div>
-        <div style={a}>
-          <span style={icon}>💧</span>
-          <span id="humidity" style={zero_margin}>
-            {o.humidity}%
-          </span>
-        </div>
-        <div style={a}>
-          <span style={icon}>🌬️</span>
-          <span id="pressure" style={zero_margin}>
-            {o.metric.pressure} hPa
-          </span>
-        </div>
-        <div style={a}>
-          <span style={icon}>🌧️</span>
-          <span id="precipitation" style={zero_margin}>
-            {o.metric.precipRate} mm/hr
-          </span>
-        </div>
+        <DataPoint icon="🌡️" units="°C" value={observation.metric.temp} />
+        <DataPoint icon="💧" units="%" value={observation.humidity} />
+        <DataPoint icon="🌬️" units="hPa" value={observation.metric.pressure} />
+        <DataPoint icon="🌧️" units="mm/hr" value={observation.metric.precipRate} />
       </div>
 
       <div style={row}>
-        <div style={a}>
-          <span style={icon}>☀️</span>
-          <span id="solar-radiation" style={zero_margin}>
-            {o.solarRadiation} W/m²
-          </span>
-          <span>({o.uv} UV)</span>
-          </div>
-        <div style={a}>
-          <span style={icon}>💨</span>
-          <span id="wind-speed" style={zero_margin}>
-            {o.metric.windSpeed} km/h
-          </span>
-          <span>({windDirection(o.winddir)})</span>
-          </div>
-        <div style={{ ...a, marginBottom: 0 }}>
-          <span style={icon}>🌪️</span>
-          <span id="wind-gust" style={zero_margin}>
-            {o.metric.windGust} km/h
-          </span>
-        </div>
+        <DataPoint icon="☀️" units="W/m²" value={observation.solarRadiation} extraValue={`${observation.uv} UV`} />
+        <DataPoint icon="💨" units="km/h" value={observation.solarRadiation} extraValue={windDirection(observation.winddir)} />
+        <DataPoint icon="🌪️" units="km/h" value={observation.metric.windGust} />
       </div>
     </div>
   );
 }
 
-export const onRequest = async (context) => {
-  const data = await getWeather(context.env.WUNDERGROUND_API_KEY);
+const IMAGE_CACHE_MINUTES = 3;
 
-  return new ImageResponse(
-    renderWidget(data),
+export const onRequest = async ({ env }) => {
+  const generated_at = await env.KV_BLOG.get("image_generated_at");
+  if (generated_at) {
+    const last_generated = new Date(generated_at);
+    console.log("Last generated at", last_generated);
+    const diff = new Date() - last_generated;
+    if (diff < 1000 * 60 * IMAGE_CACHE_MINUTES) { // 5 minutes
+      console.log("Returning cached image")
+      return new Response(await env.KV_BLOG.get("image_data", "stream"));
+    }
+  }
+
+  const data = await getWeather(env.WUNDERGROUND_API_KEY);
+
+  const img = new ImageResponse(
+    <Widget observation={data.observations[0]} />,
     {
       width: 700,
       height: 430,
       emoji: "openmoji"
     }
   );
+  console.log("Generating new image")
+  await Promise.all([
+    env.KV_BLOG.put("image_generated_at", new Date().toISOString()),
+    env.KV_BLOG.put("image_data", img.body),
+  ]);
+
+  return new Response(await env.KV_BLOG.get("image_data", "stream"));
 };
