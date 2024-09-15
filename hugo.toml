@@ -13,7 +13,7 @@ theme = "terminal"
   contentTypeName = "posts"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 4
 
   # show selector to switch language
   showLanguageSelector = false
@@ -85,9 +85,13 @@ theme = "terminal"
           name = "About"
           url = "/about"
         [[languages.en.menu.main]]
-          identifier = "weathger"
+          identifier = "weather"
           name = "Weather"
           url = "/weather"
+        [[languages.en.menu.main]]
+          identifier = "adsb"
+          name = "ADS-B Stations"
+          url = "/adsb"
         [[languages.en.menu.main]]
           identifier = "X"
           name = "X"
