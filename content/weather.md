@@ -18,3 +18,6 @@ draft = false
 ## Webcam
 
 [{{< figure src="https://assets3.webcam.io/w/z7DD0M/latest_hd.jpg" style="width: 100%;" alt="ICOIMB53 webcam" position="center" caption="ICOIMB53 Webcam (Carvalhais de Baixo, Coimbra)" captionPosition="center" >}}](https://webcam.io/webcams/z7DD0M)
+
+
+[{{< image src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fandrepcg.ovh%2Fweather%2F&countColor=%23eec35e" alt="ICOIMB53 current weather" position="center" style="border: 0;" >}}](https://visitorbadge.io/status?path=https%3A%2F%2Fandrepcg.ovh%2Fweather%2F)
