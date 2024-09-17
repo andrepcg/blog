@@ -13,7 +13,7 @@ draft = false
 [PWS Weather](https://www.pwsweather.com/station/pws/ICOIMB53)
 [Windguru](https://www.windguru.cz/station/5835)
 
-{{< image src="/weather/current" alt="ICOIMB53 current weather" position="center" style="width: 350px;" >}}
+{{< iframe src="/weather/iframe" width="400" height="300" >}}
 
 ## Webcam
 
