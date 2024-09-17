@@ -101,7 +101,7 @@ function Widget({ observation }) {
 
       <div style={row}>
         <DataPoint icon="☀️" units="W/m²" value={observation.solarRadiation} extraValue={`${observation.uv} UV`} />
-        <DataPoint icon="💨" units="km/h" value={observation.solarRadiation} extraValue={windDirection(observation.winddir)} />
+        <DataPoint icon="💨" units="km/h" value={observation.windSpeed} extraValue={windDirection(observation.winddir)} />
         <DataPoint icon="🌪️" units="km/h" value={observation.metric.windGust} />
       </div>
     </div>
