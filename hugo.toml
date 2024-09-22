@@ -58,7 +58,7 @@ theme = "terminal"
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Terminal"
+    title = "André Perdigão"
 
     [languages.en.params]
       subtitle = "A simple, retro theme for Hugo"
