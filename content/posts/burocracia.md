@@ -1,0 +1,67 @@
++++
+title = "Construir Casa em Coimbra: Diário da Burocracia"
+date = "2025-12-04T10:00:00+00:00"
+author = "André"
+authorTwitter = "andrepcg"
+cover = ""
+tags = ["coimbra", "construção", "burocracia", "cmc", "casa-própria"]
+keywords = ["construção", "coimbra", "licenciamento", "câmara municipal"]
+description = "Acompanhe o processo, os prazos e a burocracia necessária para a construção de uma moradia em Coimbra."
+showFullContent = false
+readingTime = true
+hideComments = false
++++
+
+Decidi documentar todo o processo de construção da minha nova casa em Coimbra. A ideia deste *post* é servir de "diário de bordo" para manter um registo dos passos, prazos e, inevitavelmente, da burocracia que vou encontrando pelo caminho.
+
+Vou atualizando este artigo à medida que o processo avança.
+
+---
+
+## Cronologia do Processo
+
+### Agosto 2025
+
+**26/08/2025 - Pedido de Direito à Informação**
+Demos o pontapé de saída com a submissão do Pedido de Direito à Informação junto da Câmara Municipal.
+
+### Setembro 2025
+
+**26/09/2025 - Resposta da Câmara (Direito à Informação)**
+Recebemos a resposta oficial da Câmara Municipal de Coimbra relativa ao pedido submetido no mês anterior.
+
+**30/09/2025 - Escritura**
+Escritura do terreno realizada.
+
+### Outubro 2025
+
+**16/10/2025 - Pedido de Averbamento de substituição**
+Início do processo para alterar a titularidade do processo de obra.
+
+**23/10/2025 - Certidão Predial**
+* Recebida a certidão predial atualizada enviada pela solicitadora.
+* Recebida notificação da Câmara a informar que é necessário anexar a referida certidão ao processo.
+* Envio da certidão do registo predial por email.
+
+> **⚠️ Nota Importante:**
+> Cometi um erro nesta fase. Ao receber o email da Câmara a solicitar a certidão, respondi diretamente a esse mesmo email (Reply). Em retrospetiva, reparei que o remetente era `noreply.urbanismo@cm-coimbra.pt`.
+>
+> Como não recebi nenhum email de devolução ("Mail delivery failed"), assumi erradamente que tinham recebido o documento. Fica o alerta para verificarem sempre o remetente destas notificações automáticas.
+
+### Novembro 2025
+
+**06/11/2025 - 2º Pedido de Averbamento de substituição**
+Após contactar a Câmara telefonicamente, fui informado de que o email anterior não tinha sido processado (devido ao erro do `noreply`). Foi-me indicado que deveria submeter novamente o pedido de Averbamento de substituição.
+
+**18/11/2025 - Averbamento de substituição concluído**
+Processo regularizado. O processo de obra encontra-se agora, oficialmente, em meu nome.
+
+**20/11/2025 - Pedido de Averbamento da área de cedência**
+Submissão do pedido referente às áreas de cedência ao domínio público.
+
+### Dezembro 2025
+
+**04/12/2025 - Pagamento de Taxas**
+* Recebida resposta ao Pedido de Averbamento da área de cedência com a indicação para pagamento de **11,00€** via Multibanco.
+* Pagamento efetuado.
+* Comprovativo enviado corretamente para `geral@cm-coimbra.pt`.
