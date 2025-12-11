@@ -65,3 +65,5 @@ Submissão do pedido referente às áreas de cedência ao domínio público.
 * Recebida resposta ao Pedido de Averbamento da área de cedência com a indicação para pagamento de **11,00€** via Multibanco.
 * Pagamento efetuado.
 * Comprovativo enviado corretamente para `geral@cm-coimbra.pt`.
+
+**11/12/2025 - Certidão do Pedido de Averbamento da área de cedência recebida (assinada digitalmente pela CMC)**
