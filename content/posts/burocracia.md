@@ -67,3 +67,15 @@ Submissão do pedido referente às áreas de cedência ao domínio público.
 * Comprovativo enviado corretamente para `geral@cm-coimbra.pt`.
 
 **11/12/2025 - Certidão do Pedido de Averbamento da área de cedência recebida (assinada digitalmente pela CMC)**
+
+**15/12/2025 - Tentativa de Registo (Conservatória e Finanças)**
+Desloquei-me à 2.ª Conservatória do Registo Predial para tratar do averbamento. Fui informado de que, antes deste passo, é obrigatório ir às Finanças para atualizar o registo matricial.
+* Dirigi-me ao Serviço de Finanças de Coimbra 2 por volta das 10h50. Já não havia senhas/vagas para atendimento.
+* Tentei a Loja do Cidadão: situação idêntica, sem vagas disponíveis.
+* Solução: Agendamento marcado para o dia 17 às 9h00.
+
+**17/12/2025 - Serviço de Finanças (Burocracia Geográfica)**
+Compareci no Serviço de Finanças de Coimbra 2 às 9h00, conforme agendado. Ao explicar que o objetivo era ceder área do terreno para o espaço público e que o imóvel se situa em **Antanhol**, fui informado de que estava no balcão errado.
+* A competência territorial para Antanhol pertence ao **Serviço de Finanças de Coimbra 1** (na Rua do Brasil).
+* Explicaram-me que, embora pudessem receber a documentação ali, o processo teria de ser enviado internamente para o SF Coimbra 1, o que poderia causar demoras.
+* Foi-me entregue o **Modelo 1 do IMI** para preencher, com a indicação de que posso fazer a submissão diretamente através do **e-balcão**, evitando assim nova deslocação à Rua do Brasil.
